@@ -1,0 +1,7 @@
+.recipe-card-hover {
+  transition: color .2s ease-in-out, transform .05s linear;
+  &:hover {
+    transform: scale(1.05);
+    color: #FF41B4;
+  }
+}

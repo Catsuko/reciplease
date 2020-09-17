@@ -8,5 +8,8 @@
   = csp_meta_tag
   = javascript_pack_tag 'application'
   = stylesheet_pack_tag 'stylesheet', media: 'all'
-%body
+  %link{ href: 'https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap', rel: 'stylesheet' }
+%body.bg-navy.ph4.pb5
+  %header.bb.hot-pink.mb4
+    %h2.mv4 reciplease
   = yield

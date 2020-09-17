@@ -1,0 +1,4 @@
+= link_to(recipe_path(recipe.id), class: 'no-underline ma3 mw5 db pointer gray ba bw2 b--dashed pt3 recipe-card-hover') do
+  %p.light-yellow.h3.mt0.ph3.tc
+    = recipe.fields[:title]
+  = image_tag(recipe.fields[:photo].url, alt: '', class: 'db')

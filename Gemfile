@@ -8,6 +8,7 @@ gem 'puma', '~> 4.1'
 gem 'webpacker', '~> 4.0'
 gem "haml-rails", "~> 2.0"
 gem 'react-rails'
+gem 'contentful', require: false
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
