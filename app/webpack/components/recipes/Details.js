@@ -7,9 +7,7 @@ export default function Details (props) {
       <div className='colourful-children mb1'>
         {tags.map((tag) => <span>[{tag.toUpperCase()}]</span>)}
       </div>
-      <p className='mv0 flex-auto'>
-        {description}
-      </p>
+      <p className='mv0 flex-auto' dangerouslySetInnerHTML={{ __html: description}} />
       <p className='mt2 mb0 self-end'>
         Cooked by <span className='light-yellow'>{chef}</span>
       </p>
