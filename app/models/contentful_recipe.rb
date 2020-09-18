@@ -9,6 +9,8 @@ class ContentfulRecipe
       title:        @entry.title,
       description:  @formatting.decorate(@entry.description),
       photoUrl:     @entry.photo.url,
+      tags:         @entry.fields.fetch(:tags, []).map(&:name),
+      chef:         'Lewis Reid'
     }
   end
 end

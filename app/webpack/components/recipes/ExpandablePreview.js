@@ -12,9 +12,9 @@ export default class ExpandablePreview extends Component {
   render() {
     const { isOpen } = this.state
     return (
-      <div className='flex pa3 w-100 items-start'>
+      <div className='flex flex-column flex-row-l pa3 w-100 items-center items-start-l'>
         <Preview {...this.props} onClick={this.toggleDetails} />
-        <div className={`expandable flex-auto h5 ${isOpen ? 'open' : 'closed'}`} aria-hidden={!isOpen}>
+        <div className={`expandable flex-auto h5-l ${isOpen ? 'open' : 'closed'}`} aria-hidden={!isOpen}>
           <Details {...this.props} />
         </div>
       </div>
