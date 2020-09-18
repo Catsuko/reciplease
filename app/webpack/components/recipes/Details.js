@@ -3,7 +3,10 @@ import React from 'react'
 export default function Details (props) {
   const { description, chef, tags } = props
   return (
-    <div className='h-100 ph3 flex flex-column gray'>
+    <div className='h-100 ph3-l flex flex-column gray'>
+      <div className='colourful-children mb1'>
+        {tags.map((tag) => <span>[{tag.toUpperCase()}]</span>)}
+      </div>
       <p className='mv0 flex-auto'>
         {description}
       </p>

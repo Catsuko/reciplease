@@ -1,3 +1,12 @@
 p, h1, h2, h3, h4, h5, a, span {
   font-family: 'Ubuntu Mono', monospace;
 }
+
+.colourful-children{
+  & span:nth-child(odd) {
+    color: #96CCFF;
+  }
+  & span:nth-child(even) {
+    color: #9EEBCF;
+  }
+}
