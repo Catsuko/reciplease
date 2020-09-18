@@ -1,7 +1,20 @@
-.recipe-card-hover {
+.recipe-card-focus {
   transition: color .2s ease-in-out, transform .05s linear;
-  &:hover {
+  &:hover, &:focus {
     transform: scale(1.05);
     color: #FF41B4;
+  }
+}
+
+.expandable {
+  overflow: hidden;
+  transition: max-width 0.5s ease-in-out, opacity 0.4s ease-in-out;
+  &.closed {
+    max-width: 0;
+    opacity: 0;
+  }
+  &.open {
+    max-width: 2000px;
+    opacity: 1; 
   }
 }

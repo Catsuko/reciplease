@@ -6,6 +6,7 @@ class RecipesController < ApplicationController
     # TODO: Abstract contentful behind service returning viewmodel
     # TODO: React component for expanding previews
     @recipes = client.entries(content_type: :recipe)
+                     .map{ |entry| ContentfulRecipe.new(entry) }
   end
 
   private
