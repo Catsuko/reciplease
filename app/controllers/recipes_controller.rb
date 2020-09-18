@@ -1,19 +1,15 @@
-require 'contentful'
-require 'yaml'
-
 class RecipesController < ApplicationController
   def index
-    # TODO: Abstract contentful behind service returning viewmodel
-    # TODO: React component for expanding previews
-    formatting = Formatting::CompositeRule.new
-    @recipes = client.entries(content_type: :recipe)
-                     .map{ |entry| ContentfulRecipe.new(entry, formatting) }
+    @recipes = recipe_service.all
   end
 
   private
 
-  def client
-    credentials = YAML.load_file(Rails.root.join('tmp', 'contentful_details.yml')).symbolize_keys
-    client = Contentful::Client.new(**credentials)
+  def recipe_service
+    ContentfulCdn::RecipeService.new(
+      space: 'kk2bw5ojx476',
+      access_token: '7ac531648a1b5e1dab6c18b0979f822a5aad0fe5f1109829b8a197eb2be4b84c',
+      formatting: Formatting::CompositeRule.new
+    )
   end
 end
