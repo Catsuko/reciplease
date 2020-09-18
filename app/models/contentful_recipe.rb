@@ -1,16 +1,14 @@
 class ContentfulRecipe
-  def initialize(entry)
+  def initialize(entry, formatting)
     @entry = entry
+    @formatting = formatting
   end
 
-  def to_props(context)
-    fields.slice(:title, :description)
-          .update(photoUrl: fields[:photo].url)
-  end
-
-  private
-
-  def fields
-    @entry.fields
+  def to_h
+    {
+      title:        @entry.title,
+      description:  @formatting.decorate(@entry.description),
+      photoUrl:     @entry.photo.url,
+    }
   end
 end

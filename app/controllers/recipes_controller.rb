@@ -5,8 +5,9 @@ class RecipesController < ApplicationController
   def index
     # TODO: Abstract contentful behind service returning viewmodel
     # TODO: React component for expanding previews
+    formatting = Formatting::CompositeRule.new
     @recipes = client.entries(content_type: :recipe)
-                     .map{ |entry| ContentfulRecipe.new(entry) }
+                     .map{ |entry| ContentfulRecipe.new(entry, formatting) }
   end
 
   private
