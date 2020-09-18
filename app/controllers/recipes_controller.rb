@@ -15,14 +15,14 @@ class RecipesController < ApplicationController
 
   def formatting_rules
     Formatting::CompositeRule.new([
-      Formatting::PlaceholderRule.new(
+      Formatting::HighlightRule.new(
         placeholder: '*',
-        replacement: Proc.new{ |match| "<span class='hot-pink b'>#{match}</span>" }
+        style: 'hot-pink b'
       ),
-      Formatting::PlaceholderRule.new(
+      Formatting::HighlightRule.new(
         placeholder: '__',
-        replacement: Proc.new{ |match| "<span class='blue'>#{match}</span>" }
-      ),
+        style: 'blue'
+      )
     ])
   end
 end

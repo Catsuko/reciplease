@@ -1,13 +1,16 @@
 module Formatting
-  class PlaceholderRule
-    def initialize(placeholder:, replacement:)
+  class HighlightRule
+    TEMPLATE = "<span class='%s'>%s</span>".freeze
+
+
+    def initialize(placeholder:, style:)
       @placeholder = placeholder
-      @replacement = replacement
+      @style = style
     end
 
     def decorate(content)
       content.gsub(replacement_pattern) do |match|
-        @replacement.call(match.delete(@placeholder))
+        TEMPLATE % [@style, match.delete(@placeholder)]
       end
     end
 

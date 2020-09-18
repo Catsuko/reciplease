@@ -5,7 +5,7 @@ export default function Details (props) {
   return (
     <div className='h-100 ph3-l flex flex-column gray'>
       <div className='colourful-children mb1'>
-        {tags.map((tag) => <span>[{tag.toUpperCase()}]</span>)}
+        {tags.map((tag) => <span key={tag}>[{tag.toUpperCase()}]</span>)}
       </div>
       <p className='mv0 flex-auto' dangerouslySetInnerHTML={{ __html: description}} />
       <p className='mt2 mb0 self-end'>
