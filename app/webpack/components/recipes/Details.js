@@ -8,9 +8,11 @@ export default function Details (props) {
         {tags.map((tag) => <span key={tag}>[{tag.toUpperCase()}]</span>)}
       </div>
       <p className='mv0 flex-auto' dangerouslySetInnerHTML={{ __html: description}} />
-      <p className='mt2 mb0 self-end'>
-        Cooked by <span className='light-yellow'>{chef}</span>
-      </p>
+      {chef && 
+        <p className='mt2 mb0 self-end'>
+          Cooked by <span className='light-yellow'>{chef}</span>
+        </p>
+      }
     </div>
   )
 }
