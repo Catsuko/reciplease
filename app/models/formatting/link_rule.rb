@@ -11,7 +11,7 @@ module Formatting
     private
 
     def styled_template
-      "<a class='#{@style}' href='\\2'>\\1</a>"
+      @styled_template ||= "<a class='#{@style}' href='\\2'>\\1</a>".freeze
     end
   end
 end

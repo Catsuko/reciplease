@@ -1,22 +1,22 @@
 module Formatting
   class HighlightRule
-    TEMPLATE = "<span class='%s'>%s</span>".freeze
-
     def initialize(placeholder:, style:)
       @placeholder = placeholder
       @style = style
     end
 
     def decorate(content)
-      content.gsub(replacement_pattern) do |match|
-        TEMPLATE % [@style, match.delete(@placeholder)]
-      end
+      content.gsub(replacement_pattern, styled_template)
     end
 
     private
 
+    def styled_template
+      @styled_template ||= "<span class='#{@style}'>\\1</span>".freeze
+    end
+
     def replacement_pattern
-      /#{Regexp.quote(@placeholder)}(.*?)#{Regexp.quote(@placeholder)}/
+      @pattern ||= /#{Regexp.quote(@placeholder)}(.*?)#{Regexp.quote(@placeholder)}/
     end
   end
 end
