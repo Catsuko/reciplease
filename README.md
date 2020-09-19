@@ -20,9 +20,3 @@ Run the tests from the command line with:
 ```
 rspec
 ```
-
-or if you'd like more details:
-
-```
-rspec -fd
-```

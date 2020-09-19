@@ -1,12 +1,6 @@
 require 'spec_helper'
 require 'formatting/highlight_rule'
-
-RSpec.shared_examples 'unapplied rule' do
-  it 'no changes are made' do
-
-    expect(subject).to eq content
-  end
-end
+require 'support/shared_examples/formatting_examples'
 
 RSpec.describe 'content formatted by a Highlight Rule,' do
   let(:placeholder) { '*' }
