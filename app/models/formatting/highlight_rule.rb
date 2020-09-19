@@ -2,7 +2,6 @@ module Formatting
   class HighlightRule
     TEMPLATE = "<span class='%s'>%s</span>".freeze
 
-
     def initialize(placeholder:, style:)
       @placeholder = placeholder
       @style = style
