@@ -36,8 +36,6 @@ RSpec.describe 'content formatted by a Highlight Rule,' do
       expect(subject).to match(/<span.*>#{highlighted_word}<\/span>/)
     end
 
-    it 'the inserted element is styled' do
-      expect(subject).to match(/<.* class=['"]#{style}['"]>/)
-    end
+    include_examples 'with styled element'
   end
 end
