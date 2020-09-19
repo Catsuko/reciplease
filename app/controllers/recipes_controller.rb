@@ -22,6 +22,9 @@ class RecipesController < ApplicationController
       Formatting::HighlightRule.new(
         placeholder: '__',
         style: 'blue'
+      ),
+      Formatting::LinkRule.new(
+        style: 'blue underline dim'
       )
     ])
   end
